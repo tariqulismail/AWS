@@ -1,0 +1,385 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2821
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 LucidaGrande;\f2\fnil\fcharset128 HiraginoSans-W3;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww21100\viewh37060\viewkind0
+\deftab20
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab20\partightenfactor0
+
+\f0\fs24 \cf2    ,     #_\
+   ~\\_  ####_        Amazon Linux 2023\
+  ~~  \\_#####\\\
+  ~~     \\###|\
+  ~~       \\#/ ___   https://aws.amazon.com/linux/amazon-linux-2023\
+   ~~       V~' '->\
+    ~~~         /\
+      ~~._.   _/\
+         _/ _/\
+       _/m/'\
+[ec2-user@ip-172-31-0-211 ~]$ sudo su -\
+[root@ip-172-31-0-211 ~]# yum update -y\
+Amazon Linux 2023 Kernel Livepatch repository                                                                                 127 kB/s |  15 kB     00:00    \
+Dependencies resolved.\
+Nothing to do.\
+Complete!\
+[root@ip-172-31-0-211 ~]# yum update -y\
+Last metadata expiration check: 0:00:31 ago on Thu Mar 27 08:50:19 2025.\
+Dependencies resolved.\
+Nothing to do.\
+Complete!\
+[root@ip-172-31-0-211 ~]# yum install -y httpd\
+Last metadata expiration check: 0:04:20 ago on Thu Mar 27 08:50:19 2025.\
+Dependencies resolved.\
+==============================================================================================================================================================\
+ Package                                   Architecture                 Version                                       Repository                         Size\
+==============================================================================================================================================================\
+Installing:\
+ httpd                                     x86_64                       2.4.62-1.amzn2023                             amazonlinux                        48 k\
+Installing dependencies:\
+ apr                                       x86_64                       1.7.5-1.amzn2023.0.4                          amazonlinux                       129 k\
+ apr-util                                  x86_64                       1.6.3-1.amzn2023.0.1                          amazonlinux                        98 k\
+ generic-logos-httpd                       noarch                       18.0.0-12.amzn2023.0.3                        amazonlinux                        19 k\
+ httpd-core                                x86_64                       2.4.62-1.amzn2023                             amazonlinux                       1.4 M\
+ httpd-filesystem                          noarch                       2.4.62-1.amzn2023                             amazonlinux                        14 k\
+ httpd-tools                               x86_64                       2.4.62-1.amzn2023                             amazonlinux                        81 k\
+ libbrotli                                 x86_64                       1.0.9-4.amzn2023.0.2                          amazonlinux                       315 k\
+ mailcap                                   noarch                       2.1.49-3.amzn2023.0.3                         amazonlinux                        33 k\
+Installing weak dependencies:\
+ apr-util-openssl                          x86_64                       1.6.3-1.amzn2023.0.1                          amazonlinux                        17 k\
+ mod_http2                                 x86_64                       2.0.27-1.amzn2023.0.3                         amazonlinux                       166 k\
+ mod_lua                                   x86_64                       2.4.62-1.amzn2023                             amazonlinux                        61 k\
+\
+Transaction Summary\
+==============================================================================================================================================================\
+Install  12 Packages\
+\
+Total download size: 2.3 M\
+Installed size: 6.9 M\
+Downloading Packages:\
+(1/12): apr-util-openssl-1.6.3-1.amzn2023.0.1.x86_64.rpm                                                                      406 kB/s |  17 kB     00:00    \
+(2/12): apr-1.7.5-1.amzn2023.0.4.x86_64.rpm                                                                                   2.6 MB/s | 129 kB     00:00    \
+(3/12): apr-util-1.6.3-1.amzn2023.0.1.x86_64.rpm                                                                              1.8 MB/s |  98 kB     00:00    \
+(4/12): generic-logos-httpd-18.0.0-12.amzn2023.0.3.noarch.rpm                                                                 887 kB/s |  19 kB     00:00    \
+(5/12): httpd-2.4.62-1.amzn2023.x86_64.rpm                                                                                    2.3 MB/s |  48 kB     00:00    \
+(6/12): httpd-core-2.4.62-1.amzn2023.x86_64.rpm                                                                                24 MB/s | 1.4 MB     00:00    \
+(7/12): httpd-filesystem-2.4.62-1.amzn2023.noarch.rpm                                                                         287 kB/s |  14 kB     00:00    \
+(8/12): httpd-tools-2.4.62-1.amzn2023.x86_64.rpm                                                                              1.6 MB/s |  81 kB     00:00    \
+(9/12): mailcap-2.1.49-3.amzn2023.0.3.noarch.rpm                                                                              1.9 MB/s |  33 kB     00:00    \
+(10/12): libbrotli-1.0.9-4.amzn2023.0.2.x86_64.rpm                                                                             12 MB/s | 315 kB     00:00    \
+(11/12): mod_http2-2.0.27-1.amzn2023.0.3.x86_64.rpm                                                                           6.1 MB/s | 166 kB     00:00    \
+(12/12): mod_lua-2.4.62-1.amzn2023.x86_64.rpm                                                                                 3.1 MB/s |  61 kB     00:00    \
+--------------------------------------------------------------------------------------------------------------------------------------------------------------\
+Total                                                                                                                          13 MB/s | 2.3 MB     00:00     \
+Running transaction check\
+Transaction check succeeded.\
+Running transaction test\
+Transaction test succeeded.\
+Running transaction\
+  Preparing        :                                                                                                                                      1/1 \
+  Installing       : apr-1.7.5-1.amzn2023.0.4.x86_64                                                                                                     1/12 \
+  Installing       : apr-util-openssl-1.6.3-1.amzn2023.0.1.x86_64                                                                                        2/12 \
+  Installing       : apr-util-1.6.3-1.amzn2023.0.1.x86_64                                                                                                3/12 \
+  Installing       : mailcap-2.1.49-3.amzn2023.0.3.noarch                                                                                                4/12 \
+  Installing       : httpd-tools-2.4.62-1.amzn2023.x86_64                                                                                                5/12 \
+  Installing       : libbrotli-1.0.9-4.amzn2023.0.2.x86_64                                                                                               6/12 \
+  Running scriptlet: httpd-filesystem-2.4.62-1.amzn2023.noarch                                                                                           7/12 \
+  Installing       : httpd-filesystem-2.4.62-1.amzn2023.noarch                                                                                           7/12 \
+  Installing       : httpd-core-2.4.62-1.amzn2023.x86_64                                                                                                 8/12 \
+  Installing       : mod_http2-2.0.27-1.amzn2023.0.3.x86_64                                                                                              9/12 \
+  Installing       : mod_lua-2.4.62-1.amzn2023.x86_64                                                                                                   10/12 \
+  Installing       : generic-logos-httpd-18.0.0-12.amzn2023.0.3.noarch                                                                                  11/12 \
+  Installing       : httpd-2.4.62-1.amzn2023.x86_64                                                                                                     12/12 \
+  Running scriptlet: httpd-2.4.62-1.amzn2023.x86_64                                                                                                     12/12 \
+  Verifying        : apr-1.7.5-1.amzn2023.0.4.x86_64                                                                                                     1/12 \
+  Verifying        : apr-util-1.6.3-1.amzn2023.0.1.x86_64                                                                                                2/12 \
+  Verifying        : apr-util-openssl-1.6.3-1.amzn2023.0.1.x86_64                                                                                        3/12 \
+  Verifying        : generic-logos-httpd-18.0.0-12.amzn2023.0.3.noarch                                                                                   4/12 \
+  Verifying        : httpd-2.4.62-1.amzn2023.x86_64                                                                                                      5/12 \
+  Verifying        : httpd-core-2.4.62-1.amzn2023.x86_64                                                                                                 6/12 \
+  Verifying        : httpd-filesystem-2.4.62-1.amzn2023.noarch                                                                                           7/12 \
+  Verifying        : httpd-tools-2.4.62-1.amzn2023.x86_64                                                                                                8/12 \
+  Verifying        : libbrotli-1.0.9-4.amzn2023.0.2.x86_64                                                                                               9/12 \
+  Verifying        : mailcap-2.1.49-3.amzn2023.0.3.noarch                                                                                               10/12 \
+  Verifying        : mod_http2-2.0.27-1.amzn2023.0.3.x86_64                                                                                             11/12 \
+  Verifying        : mod_lua-2.4.62-1.amzn2023.x86_64                                                                                                   12/12 \
+\
+Installed:\
+  apr-1.7.5-1.amzn2023.0.4.x86_64                          apr-util-1.6.3-1.amzn2023.0.1.x86_64          apr-util-openssl-1.6.3-1.amzn2023.0.1.x86_64       \
+  generic-logos-httpd-18.0.0-12.amzn2023.0.3.noarch        httpd-2.4.62-1.amzn2023.x86_64                httpd-core-2.4.62-1.amzn2023.x86_64                \
+  httpd-filesystem-2.4.62-1.amzn2023.noarch                httpd-tools-2.4.62-1.amzn2023.x86_64          libbrotli-1.0.9-4.amzn2023.0.2.x86_64              \
+  mailcap-2.1.49-3.amzn2023.0.3.noarch                     mod_http2-2.0.27-1.amzn2023.0.3.x86_64        mod_lua-2.4.62-1.amzn2023.x86_64                   \
+\
+Complete!\
+[root@ip-172-31-0-211 ~]# systemctl status httpd\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab20\partightenfactor0
+
+\f1 \cf2 \uc0\u9675 
+\f0  httpd.service - The Apache HTTP Server\
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; disabled; preset: disabled)\
+     Active: inactive (dead)\
+       Docs: man:httpd.service(8)\
+[root@ip-172-31-0-211 ~]# mkdir website\
+[root@ip-172-31-0-211 ~]# cd website/\
+[root@ip-172-31-0-211 website]# wget https://www.free-css.com/assets/files/free-css-templates/download/page291/carserv.zip\
+--2025-03-27 09:04:43--  https://www.free-css.com/assets/files/free-css-templates/download/page291/carserv.zip\
+Resolving www.free-css.com (www.free-css.com)... 217.160.0.242, 2001:8d8:100f:f000::28f\
+Connecting to www.free-css.com (www.free-css.com)|217.160.0.242|:443... connected.\
+HTTP request sent, awaiting response... 200 OK\
+Length: 1354335 (1.3M) [application/zip]\
+Saving to: \'91carserv.zip\'92\
+\
+carserv.zip                             100%[=============================================================================>]   1.29M  1.40MB/s    in 0.9s    \
+\
+2025-03-27 09:04:45 (1.40 MB/s) - \'91carserv.zip\'92 saved [1354335/1354335]\
+\
+[root@ip-172-31-0-211 website]# ls -lrt\
+total 1324\
+-rw-r--r--. 1 root root 1354335 Jan  7  2022 carserv.zip\
+[root@ip-172-31-0-211 website]# unzip carserv.zip \
+Archive:  carserv.zip\
+  inflating: car-repair-html-template/404.html  \
+  inflating: car-repair-html-template/about.html  \
+  inflating: car-repair-html-template/booking.html  \
+  inflating: car-repair-html-template/car-repair-html-template.jpg  \
+  inflating: car-repair-html-template/contact.html  \
+   creating: car-repair-html-template/css/\
+  inflating: car-repair-html-template/css/bootstrap.min.css  \
+  inflating: car-repair-html-template/css/style.css  \
+   creating: car-repair-html-template/img/\
+  inflating: car-repair-html-template/img/about.jpg  \
+  inflating: car-repair-html-template/img/carousel-1.png  \
+  inflating: car-repair-html-template/img/carousel-2.png  \
+  inflating: car-repair-html-template/img/carousel-bg-1.jpg  \
+  inflating: car-repair-html-template/img/carousel-bg-2.jpg  \
+  inflating: car-repair-html-template/img/service-1.jpg  \
+  inflating: car-repair-html-template/img/service-2.jpg  \
+  inflating: car-repair-html-template/img/service-3.jpg  \
+  inflating: car-repair-html-template/img/service-4.jpg  \
+  inflating: car-repair-html-template/img/team-1.jpg  \
+  inflating: car-repair-html-template/img/team-2.jpg  \
+  inflating: car-repair-html-template/img/team-3.jpg  \
+  inflating: car-repair-html-template/img/team-4.jpg  \
+  inflating: car-repair-html-template/img/testimonial-1.jpg  \
+  inflating: car-repair-html-template/img/testimonial-2.jpg  \
+  inflating: car-repair-html-template/img/testimonial-3.jpg  \
+  inflating: car-repair-html-template/img/testimonial-4.jpg  \
+  inflating: car-repair-html-template/index.html  \
+   creating: car-repair-html-template/js/\
+  inflating: car-repair-html-template/js/main.js  \
+   creating: car-repair-html-template/lib/\
+   creating: car-repair-html-template/lib/animate/\
+  inflating: car-repair-html-template/lib/animate/animate.css  \
+  inflating: car-repair-html-template/lib/animate/animate.min.css  \
+   creating: car-repair-html-template/lib/counterup/\
+  inflating: car-repair-html-template/lib/counterup/counterup.min.js  \
+   creating: car-repair-html-template/lib/easing/\
+  inflating: car-repair-html-template/lib/easing/easing.js  \
+  inflating: car-repair-html-template/lib/easing/easing.min.js  \
+   creating: car-repair-html-template/lib/owlcarousel/\
+   creating: car-repair-html-template/lib/owlcarousel/assets/\
+  inflating: car-repair-html-template/lib/owlcarousel/assets/ajax-loader.gif  \
+  inflating: car-repair-html-template/lib/owlcarousel/assets/owl.carousel.css  \
+  inflating: car-repair-html-template/lib/owlcarousel/assets/owl.carousel.min.css  \
+  inflating: car-repair-html-template/lib/owlcarousel/assets/owl.theme.default.css  \
+  inflating: car-repair-html-template/lib/owlcarousel/assets/owl.theme.default.min.css  \
+  inflating: car-repair-html-template/lib/owlcarousel/assets/owl.theme.green.css  \
+  inflating: car-repair-html-template/lib/owlcarousel/assets/owl.theme.green.min.css  \
+  inflating: car-repair-html-template/lib/owlcarousel/assets/owl.video.play.png  \
+  inflating: car-repair-html-template/lib/owlcarousel/LICENSE  \
+  inflating: car-repair-html-template/lib/owlcarousel/owl.carousel.js  \
+  inflating: car-repair-html-template/lib/owlcarousel/owl.carousel.min.js  \
+   creating: car-repair-html-template/lib/tempusdominus/\
+   creating: car-repair-html-template/lib/tempusdominus/css/\
+  inflating: car-repair-html-template/lib/tempusdominus/css/tempusdominus-bootstrap-4.css  \
+  inflating: car-repair-html-template/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css  \
+   creating: car-repair-html-template/lib/tempusdominus/js/\
+  inflating: car-repair-html-template/lib/tempusdominus/js/moment.min.js  \
+  inflating: car-repair-html-template/lib/tempusdominus/js/moment-timezone.min.js  \
+  inflating: car-repair-html-template/lib/tempusdominus/js/tempusdominus-bootstrap-4.js  \
+  inflating: car-repair-html-template/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js  \
+   creating: car-repair-html-template/lib/waypoints/\
+  inflating: car-repair-html-template/lib/waypoints/links.php  \
+  inflating: car-repair-html-template/lib/waypoints/waypoints.min.js  \
+   creating: car-repair-html-template/lib/wow/\
+  inflating: car-repair-html-template/lib/wow/wow.js  \
+  inflating: car-repair-html-template/lib/wow/wow.min.js  \
+  inflating: car-repair-html-template/LICENSE.txt  \
+  inflating: car-repair-html-template/READ-ME.txt  \
+   creating: car-repair-html-template/scss/\
+  inflating: car-repair-html-template/scss/bootstrap.scss  \
+   creating: car-repair-html-template/scss/bootstrap/\
+   creating: car-repair-html-template/scss/bootstrap/scss/\
+  inflating: car-repair-html-template/scss/bootstrap/scss/_accordion.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_alert.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_badge.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_breadcrumb.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_button-group.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_buttons.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_card.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_carousel.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_close.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_containers.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_dropdown.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_forms.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_functions.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_grid.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_helpers.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_images.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_list-group.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_mixins.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_modal.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_nav.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_navbar.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_offcanvas.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_pagination.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_popover.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_progress.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_reboot.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_root.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_spinners.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_tables.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_toasts.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_tooltip.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_transitions.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_type.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_utilities.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/_variables.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/bootstrap.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/bootstrap-grid.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/bootstrap-reboot.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/bootstrap-utilities.scss  \
+   creating: car-repair-html-template/scss/bootstrap/scss/forms/\
+  inflating: car-repair-html-template/scss/bootstrap/scss/forms/_floating-labels.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/forms/_form-check.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/forms/_form-control.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/forms/_form-range.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/forms/_form-select.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/forms/_form-text.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/forms/_input-group.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/forms/_labels.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/forms/_validation.scss  \
+   creating: car-repair-html-template/scss/bootstrap/scss/helpers/\
+  inflating: car-repair-html-template/scss/bootstrap/scss/helpers/_clearfix.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/helpers/_colored-links.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/helpers/_position.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/helpers/_ratio.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/helpers/_stretched-link.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/helpers/_text-truncation.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/helpers/_visually-hidden.scss  \
+   creating: car-repair-html-template/scss/bootstrap/scss/mixins/\
+  inflating: car-repair-html-template/scss/bootstrap/scss/mixins/_alert.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/mixins/_border-radius.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/mixins/_box-shadow.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/mixins/_breakpoints.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/mixins/_buttons.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/mixins/_caret.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/mixins/_clearfix.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/mixins/_color-scheme.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/mixins/_container.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/mixins/_deprecate.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/mixins/_forms.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/mixins/_gradients.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/mixins/_grid.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/mixins/_image.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/mixins/_list-group.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/mixins/_lists.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/mixins/_pagination.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/mixins/_reset-text.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/mixins/_resize.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/mixins/_table-variants.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/mixins/_text-truncate.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/mixins/_transition.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/mixins/_utilities.scss  \
+  inflating: car-repair-html-template/scss/bootstrap/scss/mixins/_visually-hidden.scss  \
+   creating: car-repair-html-template/scss/bootstrap/scss/utilities/\
+  inflating: car-repair-html-template/scss/bootstrap/scss/utilities/_api.scss  \
+   creating: car-repair-html-template/scss/bootstrap/scss/vendor/\
+  inflating: car-repair-html-template/scss/bootstrap/scss/vendor/_rfs.scss  \
+  inflating: car-repair-html-template/service.html  \
+  inflating: car-repair-html-template/team.html  \
+  inflating: car-repair-html-template/testimonial.html  \
+[root@ip-172-31-0-211 website]# ls -lrt\
+total 1340\
+-rw-r--r--. 1 root root 1354335 Jan  7  2022 carserv.zip\
+drwxr-xr-x. 7 root root   16384 Mar 27 09:05 car-repair-html-template\
+[root@ip-172-31-0-211 website]# cd car-repair-html-template/\
+[root@ip-172-31-0-211 car-repair-html-template]# ls -lrt\
+total 292\
+-rw-r--r--. 1 root root  1456 Aug 16  2021 LICENSE.txt\
+-rw-r--r--. 1 root root 93370 Nov 17  2021 car-repair-html-template.jpg\
+-rw-r--r--. 1 root root 11769 Nov 17  2021 404.html\
+-rw-r--r--. 1 root root 17627 Nov 17  2021 booking.html\
+-rw-r--r--. 1 root root 15877 Nov 17  2021 contact.html\
+-rw-r--r--. 1 root root 25372 Nov 17  2021 service.html\
+-rw-r--r--. 1 root root 19821 Nov 17  2021 team.html\
+-rw-r--r--. 1 root root 13797 Nov 17  2021 testimonial.html\
+-rw-r--r--. 1 root root 39983 Nov 17  2021 index.html\
+-rw-r--r--. 1 root root 23028 Nov 17  2021 about.html\
+-rw-r--r--. 1 root root   538 Nov 17  2021 READ-ME.txt\
+drwxr-xr-x. 3 root root    45 Nov 17  2021 scss\
+drwxr-xr-x. 9 root root   120 Nov 17  2021 lib\
+drwxr-xr-x. 2 root root    21 Nov 17  2021 js\
+drwxr-xr-x. 2 root root 16384 Nov 17  2021 img\
+drwxr-xr-x. 2 root root    48 Nov 17  2021 css\
+[root@ip-172-31-0-211 car-repair-html-template]# mv * /var/www/html/\
+[root@ip-172-31-0-211 car-repair-html-template]# cd /var/www/html/\
+[root@ip-172-31-0-211 html]# ls -lrt\
+total 292\
+-rw-r--r--. 1 root root  1456 Aug 16  2021 LICENSE.txt\
+-rw-r--r--. 1 root root 93370 Nov 17  2021 car-repair-html-template.jpg\
+-rw-r--r--. 1 root root 11769 Nov 17  2021 404.html\
+-rw-r--r--. 1 root root 17627 Nov 17  2021 booking.html\
+-rw-r--r--. 1 root root 15877 Nov 17  2021 contact.html\
+-rw-r--r--. 1 root root 25372 Nov 17  2021 service.html\
+-rw-r--r--. 1 root root 19821 Nov 17  2021 team.html\
+-rw-r--r--. 1 root root 13797 Nov 17  2021 testimonial.html\
+-rw-r--r--. 1 root root 39983 Nov 17  2021 index.html\
+-rw-r--r--. 1 root root 23028 Nov 17  2021 about.html\
+-rw-r--r--. 1 root root   538 Nov 17  2021 READ-ME.txt\
+drwxr-xr-x. 3 root root    45 Nov 17  2021 scss\
+drwxr-xr-x. 9 root root   120 Nov 17  2021 lib\
+drwxr-xr-x. 2 root root    21 Nov 17  2021 js\
+drwxr-xr-x. 2 root root 16384 Nov 17  2021 img\
+drwxr-xr-x. 2 root root    48 Nov 17  2021 css\
+[root@ip-172-31-0-211 html]# systemctl status httpd\
+
+\f1 \uc0\u9675 
+\f0  httpd.service - The Apache HTTP Server\
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; disabled; preset: disabled)\
+     Active: inactive (dead)\
+       Docs: man:httpd.service(8)\
+[root@ip-172-31-0-211 html]# systemctl enable httpd\
+Created symlink /etc/systemd/system/multi-user.target.wants/httpd.service 
+\f1 \uc0\u8594 
+\f0  /usr/lib/systemd/system/httpd.service.\
+[root@ip-172-31-0-211 html]# systemctl start httpd\
+[root@ip-172-31-0-211 html]# systemctl status httpd\
+\uc0\u9679  httpd.service - The Apache HTTP Server\
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; preset: disabled)\
+     Active: active (running) since Thu 2025-03-27 09:18:48 UTC; 11s ago\
+       Docs: man:httpd.service(8)\
+   Main PID: 27980 (httpd)\
+     Status: "Total requests: 0; Idle/Busy workers 100/0;Requests/sec: 0; Bytes served/sec:   0 B/sec"\
+      Tasks: 177 (limit: 1111)\
+     Memory: 12.9M\
+        CPU: 57ms\
+     CGroup: /system.slice/httpd.service\
+             
+\f2 \'84\'a5
+\f0 \uc0\u9472 27980 /usr/sbin/httpd -DFOREGROUND\
+             
+\f2 \'84\'a5
+\f0 \uc0\u9472 27998 /usr/sbin/httpd -DFOREGROUND\
+             
+\f2 \'84\'a5
+\f0 \uc0\u9472 27999 /usr/sbin/httpd -DFOREGROUND\
+             
+\f2 \'84\'a5
+\f0 \uc0\u9472 28000 /usr/sbin/httpd -DFOREGROUND\
+             \uc0\u9492 \u9472 28001 /usr/sbin/httpd -DFOREGROUND\
+\
+Mar 27 09:18:48 ip-172-31-0-211.ap-south-1.compute.internal systemd[1]: Starting httpd.service - The Apache HTTP Server...\
+Mar 27 09:18:48 ip-172-31-0-211.ap-south-1.compute.internal systemd[1]: Started httpd.service - The Apache HTTP Server.\
+Mar 27 09:18:48 ip-172-31-0-211.ap-south-1.compute.internal httpd[27980]: Server configured, listening on: port 80\
+[root@ip-172-31-0-211 html]# }
