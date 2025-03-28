@@ -6,7 +6,7 @@ This project demonstrates how to develop a real-time streaming data pipeline usi
 
 ## **Architecture**
 
-![Project Architecture](Project_Architecture.png)
+![Project Architecture](Amazon-AWS-Cloud-Topimage-1.jpg)
 
 1. **Data Ingestion:** IoT and AI workflow data are ingested into **AWS Kinesis Data Streams**.
 2. **Real-Time Processing:** AWS **Lambda** functions process and transform the data.
