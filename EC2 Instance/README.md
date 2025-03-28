@@ -1,4 +1,4 @@
-# Realtime Data Analytics Pipeline with Kinesis, Lambda, DynamoDB & Python
+# Host your personal site on AWS EC2 Instance
 
 ## Overview
 This project demonstrates how to develop a real-time streaming data pipeline using **AWS services** and **Python**. The pipeline efficiently processes IoT, energy, and AI workflow data using event-driven architectures.
