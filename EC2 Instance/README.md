@@ -19,8 +19,6 @@ This project provides a step-by-step guide to setting up AWS infrastructure, inc
 - [Step 2: Configure Security Group](#step-2-configure-security-group)
 - [Step 3: Connect to EC2 Instance](#step-3-connect-to-ec2-instance)
 - [Step 4: Deploy an Application](#step-4-deploy-an-application)
-- [Step 5: Set Up S3 Storage](#step-5-set-up-s3-storage)
-- [Step 6: Configure RDS Database](#step-6-configure-rds-database)
 - [Benefits for Clients](#benefits-for-clients)
 - [License](#license)
 
