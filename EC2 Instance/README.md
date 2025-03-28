@@ -1,100 +1,104 @@
 # Host your personal site on AWS EC2 Instance
 
-## Overview
-This project demonstrates how to develop a real-time streaming data pipeline using **AWS services** and **Python**. The pipeline efficiently processes IoT, energy, and AI workflow data using event-driven architectures.
+## 🚀 Project Overview
+This project provides a step-by-step guide to setting up AWS infrastructure, including launching an EC2 instance, configuring security, and deploying applications. The setup is ideal for startups and small businesses looking for scalable cloud solutions.
 
 
 ## **Architecture**
 
 ![Project Architecture](Amazon-AWS-Cloud-Topimage-1.jpg)
 
-1. **Data Ingestion:** IoT and AI workflow data are ingested into **AWS Kinesis Data Streams**.
-2. **Real-Time Processing:** AWS **Lambda** functions process and transform the data.
-3. **Data Storage:** Processed data is stored in **DynamoDB** for quick lookups and in **S3/Redshift** for analytics.
-4. **Analytics & Visualization:** AWS services like **Redshift** and **Athena** enable querying and reporting.
+# AWS Infrastructure Setup
+
+---
+
+## 📌 Table of Contents
+- [Project Overview](#project-overview)
+- [Prerequisites](#prerequisites)
+- [Step 1: Launch an EC2 Instance](#step-1-launch-an-ec2-instance)
+- [Step 2: Configure Security Group](#step-2-configure-security-group)
+- [Step 3: Connect to EC2 Instance](#step-3-connect-to-ec2-instance)
+- [Step 4: Deploy an Application](#step-4-deploy-an-application)
+- [Step 5: Set Up S3 Storage](#step-5-set-up-s3-storage)
+- [Step 6: Configure RDS Database](#step-6-configure-rds-database)
+- [Benefits for Clients](#benefits-for-clients)
+- [License](#license)
+
+---
+
+## ✅ Prerequisites
+Before starting, ensure you have the following:
+- An AWS Free Tier account
+- Basic knowledge of Linux and cloud computing
+- SSH client (Terminal, PuTTY, etc.)
+- AWS CLI installed
+
+---
+
+## 🚀 Step 1: Launch an EC2 Instance
+### 🔹 Task 1.1 – Launch an EC2 Virtual Machine
+1️⃣ Login to AWS Console → Navigate to **EC2**
+2️⃣ Click **Launch Instance**
+3️⃣ Choose **Amazon Linux 2** or **Ubuntu 22.04**
+4️⃣ Select **Instance Type** (t2.micro for free-tier)
+5️⃣ Configure **Security Group**:
+   - Allow **SSH (22)** from your IP
+   - Allow **HTTP (80)** for web traffic
+6️⃣ Click **Launch**, create/download a key pair, and connect via SSH.
+
+✅ **Client Benefit**: Scalable computing for hosting web applications.
+
+---
+
+## 🚀 Step 2: Configure Security Group
+### 🔹 Task 2.1 – Modify Security Rules
+- **Inbound Rules**: Allow SSH, HTTP, and custom ports as per your app needs.
+- **Outbound Rules**: Allow all traffic (default setting).
+
+✅ **Client Benefit**: Secure network access control.
+
+---
+
+## 🚀 Step 3: Connect to EC2 Instance
+### 🔹 Task 3.1 – SSH into EC2
+1️⃣ Open Terminal / PuTTY
+2️⃣ Run:
+   ```bash
+   ssh -i your-key.pem ec2-user@your-ec2-public-ip
+   ```
+3️⃣ You are now connected to your cloud server.
+
+✅ **Client Benefit**: Remote server access for development and deployment.
+
+---
+
+## 🚀 Step 4: Deploy an Application
+### 🔹 Task 4.1 – Deploy a Simple Web App
+1️⃣ Install required software:
+   ```bash
+   sudo yum update -y
+   sudo yum install -y httpd
+   ```
+2️⃣ Start the web server:
+   ```bash
+   sudo systemctl start httpd
+   ```
+3️⃣ Create an index page:
+   ```bash
+   echo "<h1>Hello from AWS EC2!</h1>" | sudo tee /var/www/html/index.html
+   ```
+4️⃣ Open your EC2 public IP in a browser.
+
+✅ **Client Benefit**: Deploy websites and APIs efficiently.
 
 
+## 🎯 Benefits for Clients
+- **Cost-Effective**: Uses AWS Free Tier resources.
+- **Scalability**: Easily scale based on traffic.
+- **Security**: IAM roles and security groups ensure protection.
+- **Flexibility**: Can deploy apps, store files, and manage databases efficiently.
 
-### **Technologies Used**
-- **AWS Kinesis Data Streams** - For real-time data ingestion.
-- **AWS Lambda** - For serverless data transformation.
-- **AWS DynamoDB** - For scalable data storage.
-- **AWS S3 & Redshift** - For optimized data retrieval and analytics.
-- **Docker** - For containerized execution of Python scripts.
-- **Python** - For data processing and ETL scripting.
+---
 
-## **Project Goals**
-- 🚀 Build a real-time **data pipeline** for processing IoT, energy, and AI workflow data.
-- 📊 Optimize **data storage & retrieval** using AWS DynamoDB, S3, and Redshift.
-- 🔄 Implement **event-driven architectures** using AWS Kinesis.
-- 🔧 Develop **ETL pipelines** to ingest, transform, and structure large energy datasets.
+🚀 **Let’s build scalable cloud solutions together!**
 
-
-## **Setup Instructions**
-### **1. Clone the Repository**
-```sh
- git clone https://github.com/your-repo/realtime-data-analytics.git
- cd realtime-data-analytics
-```
-
-### **2. Configure AWS Credentials**
-Ensure you have the AWS CLI configured:
-```sh
- aws configure
-```
-Set up your `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_REGION`.
-
-### **3. Create Kinesis Stream**
-```sh
-aws kinesis create-stream --stream-name kinesis-stream-1 --shard-count 1
-```
-
-![Amazon_Kinesis](Amazon_Kinesis.png)
-
-
-### **4. Deploy Lambda Function**
-```sh
-cd lambda/
-zip function.zip lambda_function.py
-aws lambda create-function --function-name ProcessKinesisData \
-  --runtime python3.8 --role <IAM_ROLE_ARN> --handler lambda_function.lambda_handler \
-  --zip-file fileb://function.zip --timeout 30
-```
-
-![Amazon_Lambda_Kinesis](kinesis-data-streams-to-dynamodb.png)
-
-
-### **5. Connect Kinesis to Lambda**
-```sh
-aws lambda create-event-source-mapping --event-source-arn <Kinesis ARN> \
-  --function-name ProcessKinesisData --starting-position LATEST
-```
-
-### **6. Store Data in DynamoDB**
-Create a DynamoDB table:
-```sh
-aws dynamodb create-table --table-name SensorData \
-  --attribute-definitions AttributeName=id,AttributeType=S \
-  --key-schema AttributeName=id,KeyType=HASH \
-  --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5
-```
-
-![DynamoDB](DynamoDB.png)
-
-
-### **7. Run Python Producer**
-A sample producer script to send IoT data to Kinesis:
-```sh
-python producer.py
-```
-
-## **Future Enhancements**
-✅ Add **real-time dashboards** using AWS QuickSight.  
-✅ Improve **fault tolerance** with AWS SQS & SNS for notifications.  
-✅ Implement **machine learning models** for anomaly detection in IoT data.  
-
-## **Contributing**
-Feel free to contribute by submitting **issues** or **pull requests**! 🚀
-
-## **License**
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
