@@ -46,6 +46,10 @@ Before starting, ensure you have the following:
 
 ✅ **Client Benefit**: Scalable computing for hosting web applications.
 
+![Instances](Instances.png)
+
+![instances_Summary](instances_Summary.png)
+
 ---
 
 ## 🚀 Step 2: Configure Security Group
