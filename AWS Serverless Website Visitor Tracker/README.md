@@ -4,6 +4,11 @@ A lightweight, scalable, and cost-effective **serverless visitor tracking system
 
 ---
 
+<h3 align="left">Watch the video</h3>
+<p align="left">
+<a href="https://www.youtube.com/watch?v=-m55hW75DdI" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/youtube.svg" alt="YouTube" height="30" width="40" /></a>
+</p>
+
 ## 📌 Features
 
 - Serverless architecture with on-demand scalability
