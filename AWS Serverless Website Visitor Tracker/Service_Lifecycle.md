@@ -1,25 +1,75 @@
-# E-Commerce Customer Churn Prediction using Machine Learning
+# Visitor Tracking System – ITIL-Based Service Documentation
 
+## 1. Service Strategy
 
+- **Service Name**: Visitor Tracking System
+- **Objective**: Monitor and store real-time visitor data for analytics, security, and operations.
+- **Stakeholders**: Web team, marketing, product owners
+- **Business Value**: Enables behavioral analytics, helps optimize site performance, supports compliance.
 
-### The Problem
+---
 
-In the domain of e-commerce, acquiring a new customer is generally more expensive than keeping the existing ones. The customers usually leave if they do not get good incentives. Thus, analyzing customer behavior to predict customer churn and the reasons can be a great solution for businesses especially small businesses and startups to monitor customer behavior and offer a suitable incentive that could help in maintaining the customers. In Saudi Arabia, most of the e-commerce platforms don’t offer an analytics tool for the traders to help them analyze the customer behavior which lead them to close their stores at the end. Therefore, offering a tool that can help them to analyze customer behavior will be a great contribution.
+## 2. Service Design
 
- 
+- **Architecture Overview**:
+  - AWS Lambda (event processing)
+  - API Gateway (HTTP trigger)
+  - DynamoDB (data store)
+  - CloudWatch Logs (monitoring)
 
-### The Goals
+- **Availability Goal**: 99.9%
+- **Security**:
+  - IAM roles with least privilege
+  - API Gateway with throttling
+- **Backup**: DynamoDB point-in-time recovery enabled
 
-* Help small businesses in e-commerce.
+---
 
-* Reduce churn rates.
+## 3. Service Transition
 
-* Improve the skills of the team by sharing knowledge and overcoming challenges together.
+- **Deployment Process**:
+  - Code versioned in GitHub
+  - IaC via Terraform (infra folder)
+  - GitHub Actions for CI/CD
 
+- **Change Management**:
+  - All code changes via pull requests
+  - Changes reviewed and approved before merging
+  - Deployment log in each release
 
+---
 
-### Resources
+## 4. Service Operation
 
-* __Omdena__ Local Chapter Challenge link [here](https://omdena.com/projects/e-commerce-customer-churn-prediction/)
-* __Kaggle__ Dataset link [here](https://www.kaggle.com/datasets/ankitverma2010/ecommerce-customer-churn-analysis-and-prediction)
- 
+- **Monitoring**:
+  - CloudWatch metrics: `Invocations`, `Errors`, `Duration`
+  - Alarm on Lambda error count > 3 in 5 min
+
+- **Logging**:
+  - Lambda logs streamed to CloudWatch
+  - Enable AWS X-Ray for tracing
+
+- **Incident Handling**:
+  - Errors go to DLQ (if configured)
+  - Slack/email alerts via SNS (future scope)
+
+---
+
+## 5. Continual Service Improvement
+
+- **Monthly Review Metrics**:
+  - Request volume trends
+  - Error rate trends
+  - Latency spikes
+
+- **Improvement Pipeline**:
+  - Add geo-location enrichment
+  - Integrate with QuickSight for dashboarding
+
+---
+
+## Appendix
+
+- Terraform Infra: `infra/` folder
+- Lambda Code: `src/` folder
+- CI/CD Workflow: `.github/workflows/deploy.yml`
